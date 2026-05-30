@@ -1,0 +1,15 @@
+{
+  "name": "singapore-weather-agent",
+  "version": "1.0.0",
+  "description": "Weather alert agent for Singapore using Open-Meteo API",
+  "main": "agent.js",
+  "scripts": {
+    "start": "node agent.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^17.4.2",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.14"
+  }
+}
