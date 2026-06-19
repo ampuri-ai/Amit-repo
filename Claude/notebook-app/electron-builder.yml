@@ -1,0 +1,33 @@
+appId: com.notebook.app
+productName: Notebook
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/**/*
+  - '!**/.vscode/*'
+  - '!{.eslintignore,.eslintrc.cjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml}'
+  - '!{.env,.env.*,*.md,*.map}'
+  - '!{tsconfig,tsconfig.*}.json'
+asarUnpack:
+  - out/main/**
+win:
+  executableName: notebook
+nsis:
+  artifactName: ${name}-${version}-setup.${ext}
+  shortcutName: ${productName}
+  uninstallDisplayName: ${productName}
+  createDesktopShortcut: always
+mac:
+  extendInfo:
+    - NSMicrophoneUsageDescription: Application requests access to the device's microphone.
+    - NSDocumentsFolderUsageDescription: Application requests access to the user's Documents folder.
+  notarize: false
+dmg:
+  artifactName: ${name}-${version}.${ext}
+linux:
+  target:
+    - AppImage
+    - deb
+  category: Utility
+npmRebuild: true
